@@ -12,20 +12,35 @@ body {
     font-weight: 400;
     font-style: normal;
     color: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
+.mapTitle {
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 50px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .titulo {
     display: flex;
-    justify-content: end;
-    padding-right: 250px;
-    margin-top: 15px;
+    justify-content: start;
+    padding-left: 20px;
+    margin-left: 150px;
 }
 
 .mapa {
     display: flex;
-    justify-content: start;
-    margin-left: 40px;
-    margin-top: 10px;
+    justify-content: end;
+    justify-content: space-between;
+}
+
+.tabela {
+    display: flex;
+    justify-content: column;
+    margin: auto;
 }
 
 .formulario {
@@ -50,8 +65,9 @@ body {
 }
 
 .rodape {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
+    align-items: center;
     height: auto;
     font-size: 20px;
     background-image: linear-gradient(to right bottom, #002fff, #0041e0, #1b4abe, #374f99, #485173);
