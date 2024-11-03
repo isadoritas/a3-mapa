@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<<<<<<< Updated upstream
   <title>Google Maps Search Example</title>
   <style>
     /* Estilos para o mapa */
@@ -12,9 +13,17 @@
       width: 100%;
     }
   </style>
+=======
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.2.5/dist/css/tempus-dominus.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <title>Google Maps Search Example</title>
+  
+>>>>>>> Stashed changes
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh5rPoNs9jPOWWqHbrYUjR5vcVqHsjROE&libraries=places&callback=initMap"></script>
 </head>
+
 <body>
+<<<<<<< Updated upstream
   <div id="map"></div>
   <br>
   <form id="search-form" class="form-inline my-2 my-lg-0" style="display: flex;">
@@ -182,5 +191,38 @@
       geocodeAddress(location);
     });
   </script>
+=======
+
+  <!-- Mapa e Titulo -->
+  <section class="mapTitle">
+    <h3 class="titulo">Minhas Viagens de 2024</h3>
+    <div id="map" class="mapa"></div>
+  </section>
+
+  <section class="formulario">
+        <h3>Adicione o destino no mapa</h3>
+        <form id="search-form" class="form-inline my-2 my-lg-0">
+          <input id="location-input" class="form-control mb-2" type="search" placeholder="Location" aria-label="Search">
+          <textarea id="description-input" class="form-control mb-2" placeholder="Description"></textarea>
+          <input id="photo-input" class="form-control mb-2" type="file" accept="image/*" aria-label="Upload Photo" placeholder="upload photo">
+          
+          <div class="input-group mb-2" id="datetimepicker">
+            <input type="text" class="form-control" placeholder="Date and time">
+            <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+          </div>        
+          
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+  </section>
+
+  <footer class="rodape">
+    <p>developed by bozo group</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.2.5/dist/js/tempus-dominus.min.js"></script>
+  <script src="map.js"></script> 
+
+>>>>>>> Stashed changes
 </body>
+
 </html>
