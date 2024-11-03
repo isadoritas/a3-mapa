@@ -20,4 +20,4 @@ Este projeto é uma aplicação web que permite aos usuários adicionar destinos
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/isadoritas
+   git clone https://github.com/isadoritas/a3-mapa
