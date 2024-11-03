@@ -4,225 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<<<<<<< Updated upstream
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.2.5/dist/css/tempus-dominus.min.css" />
+  
   <title>Google Maps Search Example</title>
   <style>
-    /* Estilos para o mapa */
     #map {
-      height: 500px;
+      height: 1000px;
       width: 100%;
     }
   </style>
-=======
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.2.5/dist/css/tempus-dominus.min.css" />
-  <link rel="stylesheet" href="style.css">
-  <title>Google Maps Search Example</title>
-  
->>>>>>> Stashed changes
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh5rPoNs9jPOWWqHbrYUjR5vcVqHsjROE&libraries=places&callback=initMap"></script>
 </head>
-
 <body>
-<<<<<<< Updated upstream
-  <div id="map"></div>
-  <br>
-  <form id="search-form" class="form-inline my-2 my-lg-0" style="display: flex;">
-    <input id="location-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
-
-  <script>
-    let map;
-    let geocoder;
-
-    // Função que inicializa o mapa
-    function initMap() {
-      const location = { lat: -23.55052, lng: -46.633308 }; // São Paulo como exemplo
-
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: location,
-        zoom: 13,
-        styles: [
-      { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
-      { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
-      { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
-      {
-        featureType: "administrative.locality",
-        elementType: "labels.text.fill",
-        stylers: [{ color: "#d59563" }],
-      },
-      {
-        featureType: "poi",
-        elementType: "labels.text.fill",
-        stylers: [{ color: "#d59563" }],
-      },
-      {
-        featureType: "poi.park",
-        elementType: "geometry",
-        stylers: [{ color: "#263c3f" }],
-      },
-      {
-        featureType: "poi.park",
-        elementType: "labels.text.fill",
-        stylers: [{ color: "#6b9a76" }],
-      },
-      {
-        featureType: "road",
-        elementType: "geometry",
-        stylers: [{ color: "#38414e" }],
-      },
-      {
-        featureType: "road",
-        elementType: "geometry.stroke",
-        stylers: [{ color: "#212a37" }],
-      },
-      {
-        featureType: "road",
-        elementType: "labels.text.fill",
-        stylers: [{ color: "#9ca5b3" }],
-      },
-      {
-        featureType: "road.highway",
-        elementType: "geometry",
-        stylers: [{ color: "#746855" }],
-      },
-      {
-        featureType: "road.highway",
-        elementType: "geometry.stroke",
-        stylers: [{ color: "#1f2835" }],
-      },
-      {
-        featureType: "road.highway",
-        elementType: "labels.text.fill",
-        stylers: [{ color: "#f3d19c" }],
-      },
-      {
-        featureType: "transit",
-        elementType: "geometry",
-        stylers: [{ color: "#2f3948" }],
-      },
-      {
-        featureType: "transit.station",
-        elementType: "labels.text.fill",
-        stylers: [{ color: "#d59563" }],
-      },
-      {
-        featureType: "water",
-        elementType: "geometry",
-        stylers: [{ color: "#17263c" }],
-      },
-      {
-        featureType: "water",
-        elementType: "labels.text.fill",
-        stylers: [{ color: "#515c6d" }],
-      },
-      {
-        featureType: "water",
-        elementType: "labels.text.stroke",
-        stylers: [{ color: "#17263c" }],
-      },
-    ],
-    });
-      
-
-      geocoder = new google.maps.Geocoder();
-    }
-
-    const image =
-    "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
-
-    const contentString =
-        '<div id="content">' +
-        '<div id="siteNotice">' +
-        "</div>" +
-        '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
-        '<div id="bodyContent">' +
-        "<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large " +
-        "sandstone rock formation in the southern part of the " +
-        "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
-        "south west of the nearest large town, Alice Springs; 450&#160;km " +
-        "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
-        "features of the Uluru - Kata Tjuta National Park. Uluru is " +
-        "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
-        "Aboriginal people of the area. It has many springs, waterholes, " +
-        "rock caves and ancient paintings. Uluru is listed as a World " +
-        "Heritage Site.</p>" +
-        '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-        "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
-        "(last visited June 22, 2009).</p>" +
-        "</div>" +
-        "</div>";
-    
-
-    // Função para buscar e atualizar o mapa com a nova localização
-    function geocodeAddress(location) {
-      geocoder.geocode({ address: location }, function(results, status) {
-        if (status === 'OK') {
-          // Atualiza o mapa para a nova localização
-          map.setCenter(results[0].geometry.location);
-          const marker = new google.maps.Marker({
-            map: map,
-            icon: image,
-            position: results[0].geometry.location
-          });
-          
-          const infowindow = new google.maps.InfoWindow({
-            content: contentString,
-            ariaLabel: "Uluru",
-          });
-
-          marker.addListener("click", () => {
-            infowindow.open({
-              anchor: marker,
-              map,
-          });
-    });
-        } else {
-          alert('Geocode was not successful for the following reason: ' + status);
-        }
-      });
-    }
-
-
-    // Listener para o envio do formulário de pesquisa
-    document.getElementById('search-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const location = document.getElementById('location-input').value;
-      geocodeAddress(location);
-    });
-  </script>
-=======
-
-  <!-- Mapa e Titulo -->
-  <section class="mapTitle">
-    <h3 class="titulo">Minhas Viagens de 2024</h3>
-    <div id="map" class="mapa"></div>
-  </section>
-
-  <section class="formulario">
+  <div class="row">
+    <div class="col-3">
+      <div class="row">
+        <div id="div_tabela" class="in" style="max-height: 800px; overflow-y: auto; overflow-x: hidden;">
+          <h3>Minhas Viagens de 2024</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-9">
+      <div id="map" class="m-t-10" style="height: 800px; width: 100%; z-index: 1; position: relative;">
+      </div>
+    </div>
+    <div>
+      <div class="m-t-10" style="margin-top: 50px;">
         <h3>Adicione o destino no mapa</h3>
-        <form id="search-form" class="form-inline my-2 my-lg-0">
-          <input id="location-input" class="form-control mb-2" type="search" placeholder="Location" aria-label="Search">
-          <textarea id="description-input" class="form-control mb-2" placeholder="Description"></textarea>
-          <input id="photo-input" class="form-control mb-2" type="file" accept="image/*" aria-label="Upload Photo" placeholder="upload photo">
+        <form id="search-form" class="form-inline my-2 my-lg-0" style="display: flex; flex-direction: column;">
+          <input id="location-input" class="form-control mb-2" type="search" placeholder="Search" aria-label="Search">
+          <textarea id="description-input" class="form-control mb-2" placeholder="Descrição"></textarea>
+          <input id="photo-input" class="form-control mb-2" type="file" accept="image/*" aria-label="Upload Photo">
           
           <div class="input-group mb-2" id="datetimepicker">
-            <input type="text" class="form-control" placeholder="Date and time">
+            <input type="text" class="form-control" placeholder="Data e Hora">
             <span class="input-group-text"><i class="bi bi-calendar"></i></span>
           </div>        
           
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
-  </section>
-
-  <footer class="rodape">
-    <p>developed by bozo group</p>
-  </footer>
+      </div>
+    </div>
+  </div>
+  <br>
 
   <script src="https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.2.5/dist/js/tempus-dominus.min.js"></script>
   <script src="map.js"></script> 
-
->>>>>>> Stashed changes
 </body>
-
 </html>
