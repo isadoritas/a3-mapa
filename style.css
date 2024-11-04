@@ -11,39 +11,42 @@ body {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: rgb(0, 0, 0);
-    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 10px;
+    padding: 10px;
 }
 
 .mapTitle {
-    margin-top: 25px;
-    margin-left: 20px;
-    margin-right: 50px;
-    padding: 5px;
-    display: flex;
+    gap: 20px;
     flex-direction: column;
-}
-
-.titulo {
-    display: flex;
-    justify-content: start;
-    padding-left: 20px;
-    margin-left: 150px;
+    flex: 1;
 }
 
 .mapa {
-    display: flex;
-    justify-content: end;
-    justify-content: space-between;
+    flex: 1;
+    justify-content: flex-end;
 }
 
-.tabela {
+.titulo {
+    color: #ffffff;
     display: flex;
-    justify-content: column;
-    margin: auto;
+    justify-content: start;
+    padding-left: 20px;
+    margin-left: 80px;
+}       
+
+.tabela {
+    color: #ffffff;    
 }
 
 .formulario {
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     margin-top: 40px;
